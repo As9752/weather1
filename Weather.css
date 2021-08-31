@@ -1,0 +1,256 @@
+/* .weather {
+    margin-top: 20px;
+    border: 3px dashed grey;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    width: max-content;
+    padding: 0px 20px 20px 20px;
+    margin-left: 25%;
+  }
+  .weather .title {
+    font-size: 4rem;
+  
+    font-family: "Times New Roman", Times, serif;
+  }
+  .weather form {
+    margin-top: 30px;
+  }
+  .weather form input {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px dashed rgb(2, 57, 88);
+    margin-right: 10px;
+  }
+  
+  .weather form input:focus {
+    outline: none;
+    border-bottom: 3px dashed rgb(2, 57, 88);
+  }
+  
+  .weather .getweather {
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid black;
+    background: rgb(2, 57, 88, 0.8);
+    cursor: pointer;
+    color: whitesmoke;
+  }
+  
+  .weather .getweather:hover {
+    background: transparent;
+    color: black;
+  }
+  
+  .weather .getweather:focus {
+    outline: none;
+  } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Jost",sans-serif;
+}
+body{
+    background-color: #f3f2ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width:100vw;
+    font-family:"Jost",sans-serif; 
+}
+html{
+    font-size: 100%;
+    height: 100%;
+}
+html{
+    background: #eee;
+}
+.box{
+    width: 25vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 3rem rgba(0,0,0,0.2);
+    background: #a5bbdd;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    min-width: 20rem;
+    min-height: 35rem;
+}
+.wave{
+    opacity: 0.3;
+    position: absolute;
+    top:120%;
+    left: 50%;
+    background: black;
+    width: 5orem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -20rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation:drift 3000ms infinite linear;
+    z-index: 1;
+}
+.wave-three{
+animation:drift 5000ms infinite linear;
+z-index: 2 !important;
+opacity: 0.2;
+}
+.wave-two{
+    animation:drift 7000ms infinite linear;
+    z-index: 3 !important;
+    opacity: 0.1;   
+}
+.box:after{
+ content:"";
+ display: block;
+ left: 0;
+ top:0;
+ width: 100%;
+ height: 100%;
+ z-index: 11;
+ transform: translate3d(0,0,0);
+}
+@keyframes drift {
+    from{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+.info{
+    margin-top: -2.0rem;
+ margin-left:6rem; 
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+#date{
+    text-align: center;
+    margin-top: 0.5rem;
+    color:wheat;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.weather{
+    margin-top: 0.5rem;
+    text-align: center;
+    margin-left: 4rem;
+    font-size: 3rem;
+}
+.weathermin_max{
+ text-align: center;
+ display: flex;
+ align-items: center;
+ margin-top: 0.3rem;
+ margin-left: 5rem;
+ font-weight: 300;
+ font-size: 1.2rem;
+ color: red;
+}
+#weathercon{
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+#weathercon.fas{
+    font-size: 6rem;
+    animation: fas-anime 3s linear infinite alternate;
+}
+@keyframes fas-anime {
+    from{
+        transform:scale(1.1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+@media(max-width:500px){
+    .box{
+        width: 1000vw;
+        height: 1000vh;
+    }
+    .wave{
+     top:100%;
+     }
+    #weathercon{
+        font-size: 5rem;
+    }
+    .info{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width:500px){
+    .box{
+        height:1000vh;
+    }
+    .wave{
+        top:225px;
+    }
+}
+body>span{
+    width: 100vw;
+    text-align: center;
+    color: grey;
+}
+.inputData{
+    width:100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputfield{
+    width:50%;
+    margin: auto;
+    border-radius: 5rem;
+    padding: 1rem 1rem;
+    outline: none;
+    font-size: 1.5rem;
+}
+.errorMsg{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto;
+}
